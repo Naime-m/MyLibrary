@@ -4,11 +4,14 @@
 
 *@
 @{
+    ViewData["Title"] = "Edit";
+
 }
 
 <div>
     <form asp-action="Edit" method="post">
         <div>
+            <input asp-for="Id" type="hidden"/>
             <label asp-for="Title"></label>
             <input asp-for="Title">
             <span asp-validation-for="Title" class="text-danger"></span>

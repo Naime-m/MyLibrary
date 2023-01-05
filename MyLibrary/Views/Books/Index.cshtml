@@ -5,6 +5,8 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    ViewData["Title"] = "Index";
+
 }
 @foreach(var book in Model)
 {
@@ -14,4 +16,6 @@
     <p>@book.Category</p>
     <p> Released : @book.ReleaseDate.Humanize()</p>
     <a asp-action="Edit" asp-route-id="@book.Id">Edit</a>
+    <a asp-action="Delete" asp-route-id="@book.Id">Delete</a>
+
 }

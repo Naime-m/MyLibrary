@@ -70,7 +70,7 @@ namespace MyLibrary.Controllers
             return View(book);
         }
 
-        public async Task<IActionResult> DeleteDisplay(int id) 
+        public async Task<IActionResult> Delete(int id) 
         {
             if(id == null)
             {
@@ -81,7 +81,7 @@ namespace MyLibrary.Controllers
         }
 
         [HttpPost, ActionName("Delete")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> DeleteAction(int id)
         {
             var book = await _context.Books.FindAsync(id);
 

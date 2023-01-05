@@ -70,6 +70,16 @@ namespace MyLibrary.Controllers
             return View(book);
         }
 
+        public async Task<IActionResult> DeleteDisplay(int id) 
+        {
+            if(id == null)
+            {
+                return NotFound();
+            }
+            var book = await _context.Books.FindAsync(id);
+            return View(book);
+        }
+
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> Delete(int id)
         {

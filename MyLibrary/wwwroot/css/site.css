@@ -16,3 +16,12 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+button{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.card{
+    margin-bottom: 25px;
+}

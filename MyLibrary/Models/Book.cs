@@ -14,7 +14,8 @@ public class Book
     public string Description { get; set; }
     [Required]
     public string Author { get; set; }
-    
+
+    [Required]
     [DisplayName("Release Date")]
     [DataType(DataType.Date)]
     public DateTime ReleaseDate { get; set; }

@@ -19,7 +19,6 @@
             <p>@book.Description</p>
             <p>@book.Category</p>
             <p> Released : @book.ReleaseDate.Humanize()</p>
-
             <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@book.Id" class="card-link">Edit</a>
             <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@book.Id" class="card-link">Delete</a>
         </div>

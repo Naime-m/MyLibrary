@@ -10,10 +10,29 @@
     <form asp-action="Create" method="post">
         <div>
             <label asp-for="Title"></label>
-            <input asp-for="Title" >
+            <input asp-for="Title">
         </div>
+        <div>
+            <label asp-for="Description"></label>
+            <input asp-for="Description">
+        </div>
+        <div>
+            <label asp-for="Author"></label>
+            <input asp-for="Author">
+        </div>
+        <div>
+            <label asp-for="ReleaseDate"></label>
+            <input asp-for="ReleaseDate">
+        </div>
+        <div>
+            <label asp-for="Category"></label>
+            <select asp-for="Category" asp-items="Html.GetEnumSelectList<Category>()"></select>
+        </div>
+        <button type="submit" value="Create">Submit</button>
     </form>
 </div>
+
+<a asp-action="Index">Back to Books List</a>
 
 
 

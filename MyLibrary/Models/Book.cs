@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace MyLibrary.Models;
 
@@ -8,7 +9,10 @@ public class Book
     public string Title { get; set; }
     public string Description { get; set; }
     public string Author { get; set; }
-    public string ReleaseDate { get; set; }
+    
+    [DisplayName("Release Date")]
+    [DataType(DataType.Date)]
+    public DateTime ReleaseDate { get; set; }
 
     public Category Category { get; set; }
 

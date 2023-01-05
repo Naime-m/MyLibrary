@@ -42,7 +42,7 @@ namespace MyLibrary.Controllers
 
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null | _context.Books == null)
+            if (id == null)
             {
                 return NotFound();
             }
@@ -68,6 +68,20 @@ namespace MyLibrary.Controllers
                 return RedirectToAction(nameof(Index));
             }
             return View(book);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            var book = await _context.Books.FindAsync(id);
+
+            if(id != null)
+            {
+                _context.Books.Remove(book);
+            }
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
         }
     }
 }

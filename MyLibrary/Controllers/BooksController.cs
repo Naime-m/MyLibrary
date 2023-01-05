@@ -39,5 +39,18 @@ namespace MyLibrary.Controllers
             }
             return View(book);
         }
+
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null | _context.Books == null)
+            {
+                return NotFound();
+            }
+            book = await _context.Books.FindAsync(id);
+            return View(book);
+        }
+
+        [BindProperty]
+        public Book book { get; set; }
     }
 }

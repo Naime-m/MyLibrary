@@ -6,7 +6,6 @@
 *@
 @{
 }
-
 @foreach(var book in Model)
 {
     <p>@book.Title</p>
@@ -14,4 +13,5 @@
     <p>@book.Author</p>
     <p>@book.Category</p>
     <p> Released : @book.ReleaseDate.Humanize()</p>
+    <a asp-action="Edit" asp-route-id="@book.Id">Edit</a>
 }

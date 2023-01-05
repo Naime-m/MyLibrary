@@ -9,5 +9,5 @@ public class MyLibraryDbContext: DbContext
 	{
 	}
 
-	DbSet<Book> Books { get; set; }
+	public DbSet<Book> Books { get; set; }
 }

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using MyLibrary.Data;
+using MyLibrary.Models;
 
 namespace MyLibrary.Controllers
 {
@@ -11,9 +13,14 @@ namespace MyLibrary.Controllers
         {
             _context = context;
         }
-        public IActionResult Index()
+
+
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var books = await _context.Books.ToListAsync();
+                return View(books);
         }
+
+        public IEnumerable<Book> Books { get; set; }
     }
 }

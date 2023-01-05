@@ -52,5 +52,22 @@ namespace MyLibrary.Controllers
 
         [BindProperty]
         public Book book { get; set; }
+
+        [HttpPost]
+      public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Author,ReleaseDate")] Book book)
+        {
+            if (id != book.Id)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                _context.Update(book);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(book);
+        }
     }
 }

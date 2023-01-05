@@ -17,10 +17,9 @@ namespace MyLibrary.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var books = await _context.Books.ToListAsync();
-                return View(books);
+            Books = await _context.Books.ToListAsync();
+                return View(Books);
         }
-
-        public IEnumerable<Book> Books { get; set; }
+        public IEnumerable<Book> Books { get; set; } = Enumerable.Empty<Book>();
     }
 }
